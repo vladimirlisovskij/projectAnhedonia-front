@@ -8,6 +8,8 @@
 
     background-color: rgba(0, 0, 0, 0.58);
     font: 1.3em "Amatic SC R";
+
+    z-index: 100;
 }
 
 .my-modal > div
