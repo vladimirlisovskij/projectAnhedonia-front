@@ -1,0 +1,75 @@
+/* Навигационная панель */
+section.nav-flex
+{
+    display: flex;
+    width: 100%;
+    height: 96px;
+
+    justify-content: center;
+}
+
+#main-nav
+{
+    width: 80%;
+    height: 96px;
+
+    position: relative;
+    border-radius: 0px 0px 14px 14px;
+    background-color: #FAF3DD;
+}
+
+.nav-element
+{
+    height: 100%;
+    text-align: center;
+    border-radius: 0px 0px 14px 14px;
+
+    text-decoration: none;
+    color: black;
+    font: 1em "Amatic SC";
+}
+
+.nav-element:hover
+{
+    box-shadow: 2px black;
+}
+
+.selected-nav
+{
+    background-color: #FFEFA0;
+}
+
+#login-axolotl
+{
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+    right: 10px;
+}
+
+#login-axolotl > img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-element:before 
+{
+    content: '<';
+}
+
+.nav-element:after
+{
+    content: '>';
+}
+
+.nav-element.selected-nav:before
+{
+    content: '[';
+}
+
+.nav-element.selected-nav:after
+{
+    content: ']';
+}

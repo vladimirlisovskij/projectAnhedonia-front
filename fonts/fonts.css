@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'Kermel serif regular';
+	src: url('fonts/Kermel_Serif_Regular.otf');
+}
+
+@font-face {
+	font-family: "Amatic SC";
+	font-style: regular;
+	src: url('fonts/AmaticSC-Regular.ttf');
+}
+
+/* @font-face {
+	font-family: "Amatic SC";
+	font-style: bold;
+	src: url('fonts/AnimaticSC-Bold.ttf');
+} */
