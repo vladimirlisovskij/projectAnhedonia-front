@@ -9,8 +9,10 @@ section.nav-flex
 }
 
 #main-nav
-{
-    width: 80%;
+{   
+    display: flex;
+    justify-content: space-around;
+    width: 1183px;
     height: 96px;
 
     position: relative;
@@ -18,20 +20,33 @@ section.nav-flex
     background-color: #FAF3DD;
 }
 
+#main-nav > .div-nav
+{
+    width: 900px;
+    height: 96px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
 .nav-element
 {
+    display: flex;
+    align-items: center;
     height: 100%;
     text-align: center;
     border-radius: 0px 0px 14px 14px;
 
     text-decoration: none;
     color: black;
-    font: 1em "Amatic SC";
+    font: 1.7em "Amatic SC B";
 }
 
-.nav-element:hover
+.nav-element:hover,
+.nav-element:active
 {
-    box-shadow: 2px black;
+    color: black;
+    box-shadow: 3px black;
 }
 
 .selected-nav
@@ -41,17 +56,14 @@ section.nav-flex
 
 #login-axolotl
 {
-    width: 200px;
-    height: 200px;
+    display: flex;
+    align-items: center;
 
-    position: absolute;
-    right: 10px;
-}
+} 
 
 #login-axolotl > img
 {
-    width: 100%;
-    height: 100%;
+    height: 90%;
 }
 
 .nav-element:before 

@@ -3,14 +3,16 @@
 	src: url('fonts/Kermel_Serif_Regular.otf');
 }
 
+/* regular */
 @font-face {
-	font-family: "Amatic SC";
+	font-family: "Amatic SC R";
 	font-style: regular;
-	src: url('fonts/AmaticSC-Regular.ttf');
+	src: url('AmaticSC-Regular.ttf');
 }
 
-/* @font-face {
-	font-family: "Amatic SC";
+/* bold */
+@font-face {
+	font-family: "Amatic SC B";
 	font-style: bold;
-	src: url('fonts/AnimaticSC-Bold.ttf');
-} */
+	src: url('AmaticSC-Bold.ttf');
+}
