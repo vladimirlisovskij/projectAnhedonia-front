@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>X-Lotl &mdash; Название статьи</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="lamp.css">
+    <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="post.css">
+</head>
+<body>
+    <link rel="stylesheet" v-bind:href="getModeCssFile()">
+
+    <!-- Заголовок -->
+    <header>
+        <!-- Логотип X-Lotl -->
+        <div id="logo-img"><img src="img/logo.png" title="X-Lotl"></div>
+        <!-- Название -->
+        <div id="main-title">
+            <h1>ꊼ-꒒ꂦ꓄꒒</h1>
+        </div>
+        <div id="dark-theme-button">
+            <div><input v-model='IsaDay' class="l" type="checkbox" checked></div>
+        </div>
+    </header>
+
+     <!-- Основной контент -->
+    <main>
+        <!-- Про автора -->
+        <section id="about-author">
+            <div id="author-image-holder"><img src="img/ProfileIcon.png" width="79"></div>
+            <div id="author-info">
+                <div id="name-and-registration">
+                    <h2>&DarkAngel</h2>
+                    <h4>Зарегистрирован(-а) <date>08.11.2021</date></h4>
+                </div>
+                <div id="about-text-content">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem accusamus facilis tempore est magnam. Minima, iusto. Doloribus, 
+                    ducimus accusamus earum delectus, et sunt odio minus facilis illo vero magnam temporibus? Lorem ipsum dolor sit amet consectetur, 
+                    adipisicing elit. Nesciunt sint vel libero maiores consequuntur cupiditate esse, accusamus ducimus necessitatibus cumque repudiandae deleniti, 
+                    at numquam aperiam quaerat enim aspernatur ad rerum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident architecto velit voluptas? 
+                    Dolorem tenetur aliquid adipisci necessitatibus eum aut at! Non, expedita? Placeat eligendi non sit autem officiis veniam quo?
+                </div>
+            </div>
+        </section>
+
+        <article style="margin-top: 25px;">
+            <section class="header">
+                <section id="image-section"><img src="img/testArticle.png"></section>
+                <section id="title">
+                    <div class="main-section">
+                        <p class="title">Название:</p>
+                        <h2>Большой заголовок - отличный заголовок или почему большой заголовок смотрится так хорошо</h2>
+                    </div>
+                    <div class="author-section">
+                        <p class="middle-text">Статья написана &DarkAngel<br><date>08.11.2021</date></p>
+                    </div>
+                </section>
+            </section>
+
+            <section id="article-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ipsum dolor sit amet consectetur adipiscing elit ut. Morbi tincidunt ornare massa eget egestas purus viverra accumsan. 
+                    Volutpat sed cras ornare arcu dui. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Amet mauris commodo 
+                    quis imperdiet massa. Dui vivamus arcu felis bibendum ut. Purus faucibus ornare suspendisse sed nisi lacus sed. Quam quisque 
+                    id diam vel quam. Ac feugiat sed lectus vestibulum. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Purus in 
+                    massa tempor nec feugiat nisl pretium. Accumsan in nisl nisi scelerisque. Sed vulputate mi sit amet mauris commodo quis. Cras 
+                    sed felis eget velit aliquet sagittis. Euismod elementum nisi quis eleifend quam adipiscing vitae.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ipsum dolor sit amet consectetur adipiscing elit ut. Morbi tincidunt ornare massa eget egestas purus viverra accumsan. 
+                    Volutpat sed cras ornare arcu dui. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Amet mauris commodo 
+                    quis imperdiet massa. Dui vivamus arcu felis bibendum ut. Purus faucibus ornare suspendisse sed nisi lacus sed. Quam quisque 
+                    id diam vel quam. Ac feugiat sed lectus vestibulum. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Purus in 
+                    massa tempor nec feugiat nisl pretium. Accumsan in nisl nisi scelerisque. Sed vulputate mi sit amet mauris commodo quis. Cras 
+                    sed felis eget velit aliquet sagittis. Euismod elementum nisi quis eleifend quam adipiscing vitae.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ipsum dolor sit amet consectetur adipiscing elit ut. Morbi tincidunt ornare massa eget egestas purus viverra accumsan. 
+                    Volutpat sed cras ornare arcu dui. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Amet mauris commodo 
+                    quis imperdiet massa. Dui vivamus arcu felis bibendum ut. Purus faucibus ornare suspendisse sed nisi lacus sed. Quam quisque 
+                    id diam vel quam. Ac feugiat sed lectus vestibulum. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Purus in 
+                    massa tempor nec feugiat nisl pretium. Accumsan in nisl nisi scelerisque. Sed vulputate mi sit amet mauris commodo quis. Cras 
+                    sed felis eget velit aliquet sagittis. Euismod elementum nisi quis eleifend quam adipiscing vitae.</p>
+
+                <p>Спасибо за прочтение статьи!</p>
+            </section>
+        </article>
+
+        <!-- Комментарии -->
+        <section id="comments">
+            <!-- Оставление своего комментария -->
+            <section id="leave-your-comment">
+                <h2>Хотите оставить свой комментарий ?</h2>
+                <textarea id="comment-textarea" placeholder="Введите текст Вашего комментария тут..."></textarea>
+            </section>
+            <button class="modal-button">Отправить</button>
+
+            <!-- Список всех комментариев -->
+            <section id="comment-list">
+                <div class="comment">
+                    <div class="comment-header">
+                        &MrShurukan <b>·</b> <date>08.11.2021</date> <b>·</b> 20:49
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-avatar"><img src="img/ProfileIcon.png" width="80"></div>
+                        <div class="comment-text">Отличная статья! И вообще, тема квантовой механики тут была раскрыта на ура. Я считаю, у меня новый фаворит среди статей!</div>
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <div class="comment-header">
+                        &vladimirlisovskij <b>·</b> <date>08.11.2021</date> <b>·</b> 21:33
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-avatar"><img src="img/ProfileIcon.png" width="80"></div>
+                        <div class="comment-text">Не могу не согласиться с вышеизложенными замечаниями автора. Отлично вышло!</div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer id="basement">
+        <span>WebDev Team &#8251; 2021</span>
+    </footer>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="post.js"></script>
+</body>
+</html>
