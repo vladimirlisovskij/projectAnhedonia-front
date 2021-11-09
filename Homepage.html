@@ -10,10 +10,13 @@
     <link rel="stylesheet" href="header_footer.css">
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="recommend.css">
+    <link rel="stylesheet" href="content.css">
+
 </head>
 <body>
-    <link rel="stylesheet" href="lightMode.css" v-if='IsaDay'>
-    <link rel="stylesheet" href="nightMode.css" v-else>
+    <link rel="stylesheet" href="nightMode.css" v-if='IsaDay == false'>
+    <link rel="stylesheet" href="lightMode.css" v-else>
 
     <!-- Заголовок -->
     <header>
@@ -23,6 +26,7 @@
         <div id="main-title">
             <h1>ꊼ-꒒ꂦ꓄꒒</h1>
         </div>
+        <!-- Смена темы день/ночь -->
         <div id="dark-theme-button">
             <div><input v-model='IsaDay' class="l" type="checkbox" checked></div>
         </div>
@@ -46,19 +50,34 @@
     </section>
 
     <!-- Основной контент -->
-    <main>
+    <main id="content-block">
         <!-- Выбор редакции -->
         <section id="our-selection">
-            <h3>Выбор редакции</h3>
+            <h2>Выбор редакции</h2>
             <div class="slider">
-                <img src="img/left-arrow.png">
-                <div class="selection-posts"><h1>бе</h1></div>
-                <img src="img/right-arrow.png">
+                <div class="slide-arrow"><img src="img/arrow-left.png"></div>
+                
+                <div class="selection-posts">
+                    <img src="img/test.png">
+                    <figcaption>Как научиться думать, как тестировщик</figcaption>
+                </div>
+
+                <div class="selection-posts">
+                    <img src="img/test3.jpeg">
+                    <figcaption>Да пишите вы сами этот наш контент</figcaption>
+                </div>
+
+                <div class="selection-posts">
+                    <img src="img/test2.png">
+                    <figcaption>Я не чувствую давления async</figcaption>
+                </div>
+                
+                <div class="slide-arrow"><img src="img/arrow-right.png"></div>
             </div>
         </section>
     </main>
 
-    <!-- Модалка авторизации -->
+    <!-- Модальное окно авторизации -->
     <section id="authorize-modal" class="my-modal hidden">
         <div>
             <div class="close-modal">x</div>

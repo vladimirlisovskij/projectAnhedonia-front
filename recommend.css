@@ -1,0 +1,61 @@
+#our-selection
+{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    width: 78%;
+    margin-top: 29px;
+
+    background-color: #F6F6F6;
+    box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 29px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#our-selection > h2
+{
+    padding-top: 18px;
+    font-family: "Amatic SC B";
+    text-decoration: underline overline wavy;
+    /*Понакидать анимаций*/
+}
+
+.slider
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+
+    margin-top: 10px;
+    width: 100%
+}
+
+.slider > .selection-posts
+{
+    position: relative;
+    height: 260px;
+}
+
+.slider > .selection-posts > img
+{
+    width: 315px;
+    height: 206px;
+}
+
+.selection-posts > figcaption
+{
+    text-align: center;
+}
+
+.slide-arrow > img
+{
+    width: 43px;
+}
