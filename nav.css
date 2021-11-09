@@ -17,7 +17,8 @@ section.nav-flex
 
     position: relative;
     border-radius: 0px 0px 14px 14px;
-    background-color: #FAF3DD;
+
+    transition: background-color 0.2s;
 }
 
 #main-nav > .div-nav
@@ -38,20 +39,9 @@ section.nav-flex
     border-radius: 0px 0px 14px 14px;
 
     text-decoration: none;
-    color: black;
     font: 1.7em "Amatic SC B";
-}
 
-.nav-element:hover,
-.nav-element:active
-{
-    color: black;
-    box-shadow: 3px black;
-}
-
-.selected-nav
-{
-    background-color: #FFEFA0;
+    transition: color 0.2s;
 }
 
 #login-axolotl
@@ -84,4 +74,9 @@ section.nav-flex
 .nav-element.selected-nav:after
 {
     content: ']';
+}
+
+.selected-nav
+{
+    transition: background-color 0.2s;
 }

@@ -27,7 +27,7 @@
 
 #dark-theme-button div {
 	padding: 1.5em 0 0 0;
-	text-align: center;	
+	text-align: center;
 }
 .l {
 	background-color: rgba(0,0,0,0.7);
@@ -55,7 +55,6 @@
 	width: 1.2em;
 	height: 1.2em;
 	transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
-	z-index: 1;
 }
 .l:after {
 	background:

@@ -1,0 +1,38 @@
+html, body
+{
+    background: white;
+}
+
+header 
+{
+    background-color: #C3AED6;
+}
+
+#basement
+{
+    background-color: #ECC8C9;
+}
+
+/*nav*/
+
+#main-nav
+{
+    background-color: #FAF3DD; 
+}
+
+.nav-element
+{
+    color: black;
+}
+
+.nav-element:hover,
+.nav-element:active
+{
+    color: black;
+    box-shadow: 0 0 3px black;
+}
+
+.selected-nav
+{
+    background-color: #FFEFA0;
+}

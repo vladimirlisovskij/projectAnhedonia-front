@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="modal.css">
 </head>
 <body>
+    <link rel="stylesheet" href="lightMode.css" v-if='IsaDay'>
+    <link rel="stylesheet" href="nightMode.css" v-else>
+
     <!-- Заголовок -->
     <header>
         <!-- Логотип X-Lotl -->
@@ -21,7 +24,7 @@
             <h1>ꊼ-꒒ꂦ꓄꒒</h1>
         </div>
         <div id="dark-theme-button">
-            <div><input class="l" type="checkbox" checked></div>
+            <div><input v-model='IsaDay' class="l" type="checkbox" checked></div>
         </div>
     </header>
     
@@ -38,14 +41,21 @@
                 <a href="#" class="nav-element"><span class="nav-text">Научпоп</span></a>
             </div>
             
-            <div id="login-axolotl"><img src="img/ProfileIcon.png"></div>
+            <div id="login-axolotl"><img v-if="IsaDay" src="img/ProfileIcon.png"><img v-else src="img/ProfileIconNight.png"></div>
         </nav>
     </section>
 
     <!-- Основной контент -->
     <main>
         <!-- Выбор редакции -->
-        <section></section>
+        <section id="our-selection">
+            <h3>Выбор редакции</h3>
+            <div class="slider">
+                <img src="img/left-arrow.png">
+                <div class="selection-posts"><h1>бе</h1></div>
+                <img src="img/right-arrow.png">
+            </div>
+        </section>
     </main>
 
     <!-- Модалка авторизации -->
@@ -89,6 +99,7 @@
         <span>WebDev Team &#8251; 2021</span>
     </footer>
 
+    <script src="https://unpkg.com/vue@next"></script>
     <script src="homepage.js"></script>
 </body>
 </html>
