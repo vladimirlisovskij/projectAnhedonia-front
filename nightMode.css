@@ -37,3 +37,49 @@ header
 {
     background-color: #BEB6CF;
 }
+
+/* post.html */
+#about-author
+{
+    background: #857980;
+}
+
+article
+{
+    background: #857980;
+}
+
+#comment-textarea
+{
+    background: #ae8d8d;
+    color: white;
+}
+
+::-webkit-input-placeholder  /* Chrome */
+{
+    color: #e6dede;
+}
+:-ms-input-placeholder       /* IE 10+ */
+{
+    color: #e6dede;
+}
+::-moz-placeholder           /* Firefox 19+ */
+{
+    color: #e6dede;
+    opacity: 1;
+}
+:-moz-placeholder            /* Firefox 4 - 18 */
+{
+    color: #e6dede;
+    opacity: 1;
+}
+
+.modal-button
+{
+    background: #f9c0c0;
+}
+
+.comment
+{
+    background-color: #A58B91;
+}

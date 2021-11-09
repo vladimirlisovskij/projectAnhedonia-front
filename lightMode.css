@@ -42,3 +42,24 @@ header
 {
     background: #F8F8F8;
 }
+
+article
+{
+    background: #F8F8F8;
+}
+
+#comment-textarea
+{
+    background: #FDFDFD;
+}
+
+.modal-button
+{
+    background: #FFB0C3;
+    color: #FFFFFF;
+}
+
+.comment
+{
+ background: #F8F8F8;
+}

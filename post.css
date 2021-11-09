@@ -15,15 +15,15 @@ main
 #about-author
 {
     position: relative;
-
+    display: flex;
+    
     width: 90%;
     /* height: 190px; */
-
     padding: 20px 30px 15px 10px;
-
     box-shadow: 2px 5px 4px -1px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
 
-    display: flex;
+    
 }
 
 #author-image-holder
@@ -47,6 +47,16 @@ main
     justify-content: space-between;
 }
 
+#name-and-registration > h2,
+#name-and-registration > h4,
+.main-section > h2,
+.author-section > p
+
+{
+    font-family: "Amatic SC B";
+}
+
+
 #about-text-content
 {
     height: calc(100% - 60px);
@@ -59,9 +69,8 @@ article
     width: 90%;
     position: relative;
 
-    background: #F8F8F8;
+    border-radius: 29px;
     box-shadow: 2px 5px 4px -1px rgba(0, 0, 0, 0.15);
-
     padding: 20px;
 }
 
@@ -157,7 +166,6 @@ p.middle-text
 
     font-size: 20px;
 
-    background: #FDFDFD;
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 16px;
@@ -173,14 +181,12 @@ p.middle-text
     width: 204px;
     height: 51px;
 
-    background: #FFB0C3;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
 
     border: none;
 
     font-size: 25px;
-    color: #FFFFFF;
 
     transition: box-shadow 0.2s;
 
@@ -208,7 +214,6 @@ p.middle-text
 .comment
 {
     margin-top: 24px;
-    background: #F8F8F8;
     box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.15);
 
     padding: 10px 15px;
@@ -239,4 +244,15 @@ p.middle-text
 {
     flex-grow: 1;
     margin-left: 20px;
+}
+
+.main-section > h2
+{
+    padding-left: 5px;
+    font-size: 36px;
+}
+
+.author-section > p
+{
+    font-size: 28px;
 }
