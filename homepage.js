@@ -1,6 +1,8 @@
 const App = {
     data() {
         return {
+            selectedType: 0,
+
             IsaDay: true,
             loginModalOpen: false,
             registerModalOpen: false,
@@ -16,7 +18,9 @@ const App = {
           
             firstThree: true,
 
-            isLoggedIn: false
+            isLoggedIn: false,
+
+            articles: []
         }
     },
     mounted() {
@@ -35,6 +39,29 @@ const App = {
         {
             this.isLoggedIn = true;
         }
+
+        // Получить все статьи
+        sendJSON("https://localhost:5001/Test/allPosts", { }, (response) => 
+        {
+            response.data.forEach((article, id) => 
+            {
+                sendJSON(`https://localhost:5001/Main/getUser?id=${article.authorId}`, { }, (userResponse) =>
+                {
+                    let authorData = userResponse.data;
+
+                    let cutContent = article.content.length > 500 ? article.content.substring(0, 500) + "..." : article.content;
+
+                    let imageUrl = "";
+                    if (article.title == "Тестовая статья №1")
+                        imageUrl = "img/testArticle.png";
+                    else
+                        imageUrl = "img/logo.png";
+
+                    this.articles.push({ title: article.title, date: new Date(article.creationDateTime), 
+                        authorName: authorData.username, content: cutContent, image: imageUrl, articleUrl: `/post.html?id=${id+1}` });
+                });
+            });
+        });
     },
     methods: {
         switchThree() {
@@ -62,6 +89,9 @@ const App = {
                 = this.registerPassword = this.registerRePassword = "";
 
             this.loginOrPasswordIncorrect = this.passwordDoNotMatch = false;
+        },
+        b(n) {
+            return n < 10 ? "0" + n : n; 
         },
 
         login() {
