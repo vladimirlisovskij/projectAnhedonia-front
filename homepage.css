@@ -28,7 +28,7 @@ main
 {
     align-self: center;
 }
-/* 
+/* /* 
 body::-webkit-scrollbar 
 {
     width: 10px;
@@ -49,4 +49,4 @@ background-color: -webkit-linear-gradient(45deg,rgba(255, 255, 255, .25) 25%,
                     rgba(255, 255, 255, .25) 75%,
                     transparent 75%,
                     transparent); */
-}
+} */
