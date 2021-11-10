@@ -22,7 +22,7 @@ header
 
     /* z-index: -1; */
 
-    transition: background-color 0.2s;
+    /* transition: background-color 0.2s; */
 }
 
 #logo-img
@@ -33,7 +33,7 @@ header
     align-self: center;
 }
 
-#logo-img > img
+#logo-img > a > img
 {
     display: block;
     width: 66px;
@@ -69,7 +69,6 @@ header
     text-align: center;
     line-height: 45px;
     transition: background-color 0.2s;
-
 }
 
 #basement > span

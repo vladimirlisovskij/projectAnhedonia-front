@@ -54,6 +54,7 @@ section.nav-flex
 #login-axolotl > img
 {
     height: 90%;
+    cursor: pointer;
 }
 
 .nav-element:before 
