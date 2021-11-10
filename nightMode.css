@@ -100,3 +100,26 @@ article
 {
     background-color: #A58B91;
 }
+
+::-webkit-scrollbar /*размеры ползунков*/
+{
+    width: 10px ;
+}
+  
+::-webkit-scrollbar-track /*цвет дорожки*/
+{
+background-color: #3C2C3E
+}
+
+::-webkit-scrollbar-thumb /*свойства ползунка*/
+{
+    background-color: #f2bf93;
+    background-image: repeating-linear-gradient(45deg, #2c2c44, #524d6a 10px, #90a2af 10px, #dbeaf2 20px);
+    /* background-image: repeating-linear-gradient(45deg, #2D4262, #363237 10px, #af4b31 10px, #D09683 20px); */
+    border-radius: 5px ;
+}
+
+*::-webkit-scrollbar-thumb:hover 
+{
+    background-color:rgba(0,0,0,.3);
+} 

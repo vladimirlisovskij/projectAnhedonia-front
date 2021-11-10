@@ -80,3 +80,26 @@ article
 {
  background: #F8F8F8;
 }
+
+::-webkit-scrollbar /*размеры ползунков*/
+{
+    width: 10px ;
+}
+  
+::-webkit-scrollbar-track /*цвет дорожки*/
+{
+background-color: #f9f9fd
+}
+
+::-webkit-scrollbar-thumb /*свойства ползунка*/
+{
+    background-color: #f2bf93;
+    /* background-image: repeating-linear-gradient(45deg, #ababcb, #d3d1e4 10px, #e8e2f0 10px, #e2cbdb 20px); */
+    background-image: repeating-linear-gradient(45deg, #faaee6, #d35fae 10px, #e4d6e7 10px, #ece0e5 20px);
+    border-radius: 5px ;
+}
+
+*::-webkit-scrollbar-thumb:hover 
+{
+    background-color:rgba(0,0,0,.3);
+} 
