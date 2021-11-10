@@ -15,20 +15,19 @@
 
 </head>
 <body>
-    <link rel="stylesheet" href="nightMode.css" v-if='IsaDay == false'>
-    <link rel="stylesheet" href="lightMode.css" v-else>
+    <link rel="stylesheet" v-bind:href="getModeCssFile()">
 
     <!-- Заголовок -->
     <header>
         <!-- Логотип X-Lotl -->
-        <div id="logo-img"><img src="img/logo.png" title="X-Lotl"></div>
+        <div id="logo-img"><a href="/Homepage.html"><img src="img/logo.png" title="X-Lotl"></a></div>
         <!-- Название -->
         <div id="main-title">
             <h1>ꊼ-꒒ꂦ꓄꒒</h1>
         </div>
         <!-- Смена темы день/ночь -->
         <div id="dark-theme-button">
-            <div><input v-model='IsaDay' class="l" type="checkbox" checked></div>
+            <div><input v-model='IsaDay' @change="onModeChange()" class="l" type="checkbox" checked></div>
         </div>
     </header>
     
@@ -45,7 +44,8 @@
                 <a href="#" class="nav-element"><span class="nav-text">Научпоп</span></a>
             </div>
             
-            <div id="login-axolotl"><img v-if="IsaDay" src="img/ProfileIcon.png"><img v-else src="img/ProfileIconNight.png"></div>
+            
+            <div id="login-axolotl"><img @click="openLoginModal()" v-if="IsaDay" src="img/ProfileIcon.png"><img @click="openLoginModal()" v-else src="img/ProfileIconNight.png"></div>
         </nav>
     </section>
 
@@ -78,38 +78,42 @@
     </main>
 
     <!-- Модальное окно авторизации -->
-    <section id="authorize-modal" class="my-modal hidden">
+    <section id="authorize-modal" class="my-modal" v-bind:class="{ visible: loginModalOpen }">
         <div>
-            <div class="close-modal">x</div>
+            <div class="close-modal" @click="closeModals()">x</div>
 
-            <img src="img/hi.png" width="253">
-            <h1>Привет!</h1>
+            <img v-if="loginOrPasswordIncorrect == false" src="img/hi.png" width="253">
+            <img v-else src="img/angry.png" width="253">
+            <h1 v-if="loginOrPasswordIncorrect == false">Привет!</h1>
+            <h1 v-else>Oops!</h1>
 
-            <div class="warning"><input type="text" class="modal-input" placeholder="Имя пользователя" style="margin-top: 10px;"></div>
-            <input type="password" class="modal-input" placeholder="Пароль" style="margin-top: 30px;">
+            <input type="text" v-model="authLogin" class="modal-input" placeholder="Имя пользователя" style="margin-top: 10px;">
+            <input type="password" v-model="authPassword" class="modal-input" placeholder="Пароль" style="margin-top: 30px;">
 
-            <h4 class="modal-danger" style="margin-top: 10px;">Неправильный логин или пароль!</h4>
+            <h4 class="modal-danger" v-bind:class="{ visible: loginOrPasswordIncorrect }" style="margin-top: 10px;">Неправильный логин или пароль!</h4>
 
-            <button class="modal-button" style="margin-top: 40px;">Войти</button>
-            <div id="link-wrapper"><a href="#" id="register-link">Новенький тут? Зарегистрироваться</a></div>
+            <button class="modal-button" style="margin-top: 40px;" @click="login()">Войти</button>
+            <div id="link-wrapper"><a href="#" id="register-link" @click="openRegisterModal()">Новенький тут? Зарегистрироваться</a></div>
         </div>
     </section>
 
-    <section id="register-modal" class="my-modal hidden">
+    <section id="register-modal" class="my-modal" v-bind:class="{ visible: registerModalOpen }">
         <div>
-            <div class="close-modal">x</div>
+            <div class="close-modal" @click="closeModals()">x</div>
 
-            <img src="img/read.png" width="253">
-            <h1>Давайте с Вами познакомимся!</h1>
+            <img v-if="passwordDoNotMatch == false" src="img/read.png" width="253">
+            <img v-else src="img/no.png" width="253">
+            <h1 v-if="passwordDoNotMatch == false">Давайте с Вами познакомимся!</h1>
+            <h1 v-else>Ошибочка вышла!</h1>
 
-            <input type="text" class="modal-input" placeholder="Имя пользователя" style="margin-top: 10px;">
-            <div class="warning"><input type="password" class="modal-input" placeholder="Пароль" style="margin-top: 20px;"></div>
-            <div class="warning"><input type="password" class="modal-input" placeholder="Повторите пароль" style="margin-top: 20px;"></div>
+            <input type="text" v-model="registerLogin" class="modal-input" placeholder="Имя пользователя" style="margin-top: 10px;">
+            <div v-bind:class="{ warning: passwordDoNotMatch }"><input type="password" v-model="registerPassword" class="modal-input" placeholder="Пароль" style="margin-top: 20px;"></div>
+            <div v-bind:class="{ warning: passwordDoNotMatch }"><input type="password" v-model="registerRePassword" class="modal-input" placeholder="Повторите пароль" style="margin-top: 20px;"></div>
 
-            <h4 class="modal-danger" style="margin-top: 10px;">Пароли не совпадают!</h4>
+            <h4 class="modal-danger" v-bind:class="{ visible: passwordDoNotMatch }" style="margin-top: 10px;">Пароли не совпадают!</h4>
 
-            <button class="modal-button" style="margin-top: 10px; font-size: 34px;">Зарегистрироваться</button>
-            <div id="link-wrapper"><a href="#" id="login-link">Назад к логину</a></div>
+            <button class="modal-button" style="margin-top: 10px; font-size: 34px;" @click="register()">Зарегистрироваться</button>
+            <div id="link-wrapper"><a href="#" id="login-link" @click="openLoginModal()">Назад к логину</a></div>
         </div>
     </section>
 
@@ -118,7 +122,10 @@
         <span>WebDev Team &#8251; 2021</span>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="api.js"></script>
     <script src="homepage.js"></script>
 </body>
 </html>

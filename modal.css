@@ -1,5 +1,7 @@
 .my-modal
 {
+    display: none;
+
     top: 0;
     left: 0;
     position: absolute;
@@ -133,6 +135,8 @@
 {
     color: red;
     font-size: 40px;
+
+    opacity: 0;
 }
 
 #link-wrapper
@@ -145,6 +149,7 @@
     text-align: center;
 }
 
+#login-link,
 #register-link
 { 
     color: black;
@@ -153,7 +158,8 @@
     /* margin-right: 10px; */
 }
 
-.hidden
+.visible
 {
-    display: none;
+    display: block;
+    opacity: 1;
 }

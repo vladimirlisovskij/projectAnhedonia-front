@@ -15,13 +15,13 @@
     <!-- Заголовок -->
     <header>
         <!-- Логотип X-Lotl -->
-        <div id="logo-img"><img src="img/logo.png" title="X-Lotl"></div>
+        <div id="logo-img"><a href="/Homepage.html"><img src="img/logo.png" title="X-Lotl"></a></div>
         <!-- Название -->
         <div id="main-title">
             <h1>ꊼ-꒒ꂦ꓄꒒</h1>
         </div>
         <div id="dark-theme-button">
-            <div><input v-model='IsaDay' class="l" type="checkbox" checked></div>
+            <div><input v-model='IsaDay' @change="onModeChange()" class="l" type="checkbox" checked></div>
         </div>
     </header>
 
@@ -32,57 +32,30 @@
             <div id="author-image-holder"><img src="img/ProfileIcon.png" width="79"></div>
             <div id="author-info">
                 <div id="name-and-registration">
-                    <h2>&DarkAngel</h2>
-                    <h4>Зарегистрирован(-а) <date>08.11.2021</date></h4>
+                    <h2>&{{ author.name }}</h2>
+                    <h4>Зарегистрирован(-а) <date>{{ b(author.date.getDate()) }}.{{ b(author.date.getMonth() + 1) }}.{{ b(author.date.getFullYear()) }}</date></h4>
                 </div>
                 <div id="about-text-content">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem accusamus facilis tempore est magnam. Minima, iusto. Doloribus, 
-                    ducimus accusamus earum delectus, et sunt odio minus facilis illo vero magnam temporibus? Lorem ipsum dolor sit amet consectetur, 
-                    adipisicing elit. Nesciunt sint vel libero maiores consequuntur cupiditate esse, accusamus ducimus necessitatibus cumque repudiandae deleniti, 
-                    at numquam aperiam quaerat enim aspernatur ad rerum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident architecto velit voluptas? 
-                    Dolorem tenetur aliquid adipisci necessitatibus eum aut at! Non, expedita? Placeat eligendi non sit autem officiis veniam quo?
+                    {{ author.about }}
                 </div>
             </div>
         </section>
 
         <article style="margin-top: 25px;">
             <section class="header">
-                <section id="image-section"><img src="img/testArticle.png"></section>
+                <section id="image-section"><img v-bind:src="article.imageUrl"></section>
                 <section id="title">
                     <div class="main-section">
-                        <h2>Мы не знаем что это такое если бы мы знали что это такое мы не знаем что это такое</h2>
+                        <h2>{{ article.title }}</h2>
                     </div>
                     <div class="author-section">
-                        <p class="middle-text">Статья написана в <time>18:45</time><br><date>08.11.2021</date></p>
+                        <p class="middle-text">Статья написана в <time>{{ b(article.date.getHours()) }}:{{ b(article.date.getMinutes()) }}</time><br><date>{{ b(article.date.getDate()) }}.{{ b(article.date.getMonth() + 1) }}.{{ b(article.date.getFullYear()) }}</date></p>
                     </div>
                 </section>
             </section>
 
             <section id="article-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ipsum dolor sit amet consectetur adipiscing elit ut. Morbi tincidunt ornare massa eget egestas purus viverra accumsan. 
-                    Volutpat sed cras ornare arcu dui. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Amet mauris commodo 
-                    quis imperdiet massa. Dui vivamus arcu felis bibendum ut. Purus faucibus ornare suspendisse sed nisi lacus sed. Quam quisque 
-                    id diam vel quam. Ac feugiat sed lectus vestibulum. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Purus in 
-                    massa tempor nec feugiat nisl pretium. Accumsan in nisl nisi scelerisque. Sed vulputate mi sit amet mauris commodo quis. Cras 
-                    sed felis eget velit aliquet sagittis. Euismod elementum nisi quis eleifend quam adipiscing vitae.</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ipsum dolor sit amet consectetur adipiscing elit ut. Morbi tincidunt ornare massa eget egestas purus viverra accumsan. 
-                    Volutpat sed cras ornare arcu dui. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Amet mauris commodo 
-                    quis imperdiet massa. Dui vivamus arcu felis bibendum ut. Purus faucibus ornare suspendisse sed nisi lacus sed. Quam quisque 
-                    id diam vel quam. Ac feugiat sed lectus vestibulum. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Purus in 
-                    massa tempor nec feugiat nisl pretium. Accumsan in nisl nisi scelerisque. Sed vulputate mi sit amet mauris commodo quis. Cras 
-                    sed felis eget velit aliquet sagittis. Euismod elementum nisi quis eleifend quam adipiscing vitae.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ipsum dolor sit amet consectetur adipiscing elit ut. Morbi tincidunt ornare massa eget egestas purus viverra accumsan. 
-                    Volutpat sed cras ornare arcu dui. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Amet mauris commodo 
-                    quis imperdiet massa. Dui vivamus arcu felis bibendum ut. Purus faucibus ornare suspendisse sed nisi lacus sed. Quam quisque 
-                    id diam vel quam. Ac feugiat sed lectus vestibulum. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Purus in 
-                    massa tempor nec feugiat nisl pretium. Accumsan in nisl nisi scelerisque. Sed vulputate mi sit amet mauris commodo quis. Cras 
-                    sed felis eget velit aliquet sagittis. Euismod elementum nisi quis eleifend quam adipiscing vitae.</p>
-
-                <p>Спасибо за прочтение статьи!</p>
+                <p v-for="paragraph in article.contentParagraphs">{{ paragraph }}</p>
             </section>
         </article>
 
@@ -91,29 +64,19 @@
             <!-- Оставление своего комментария -->
             <section id="leave-your-comment">
                 <h2>Хотите оставить свой комментарий ?</h2>
-                <textarea id="comment-textarea" placeholder="Введите текст Вашего комментария тут..."></textarea>
+                <textarea id="comment-textarea" placeholder="Введите текст Вашего комментария тут..." v-model="commentText"></textarea>
             </section>
-            <button class="modal-button">Отправить</button>
+            <button class="modal-button" @click="sendComment()">Отправить</button>
 
             <!-- Список всех комментариев -->
             <section id="comment-list">
-                <div class="comment">
+                <div class="comment" v-for="comment in comments">
                     <div class="comment-header">
-                        &MrShurukan <b>·</b> <date>08.11.2021</date> <b>·</b> 20:49
+                        &{{ comment.authorName }} <b>·</b> <date>{{ b(comment.date.getDate()) }}.{{ b(comment.date.getMonth() + 1) }}.{{ b(comment.date.getFullYear()) }}</date> <b>·</b> <time>{{ b(comment.date.getHours()) }}:{{ b(comment.date.getMinutes()) }}</time>
                     </div>
                     <div class="comment-content">
                         <div class="comment-avatar"><img src="img/ProfileIcon.png" width="80"></div>
-                        <div class="comment-text">Отличная статья! И вообще, тема квантовой механики тут была раскрыта на ура. Я считаю, у меня новый фаворит среди статей!</div>
-                    </div>
-                </div>
-
-                <div class="comment">
-                    <div class="comment-header">
-                        &vladimirlisovskij <b>·</b> <date>08.11.2021</date> <b>·</b> 21:33
-                    </div>
-                    <div class="comment-content">
-                        <div class="comment-avatar"><img src="img/ProfileIcon.png" width="80"></div>
-                        <div class="comment-text">Не могу не согласиться с вышеизложенными замечаниями автора. Отлично вышло!</div>
+                        <div class="comment-text">{{ comment.content }}</div>
                     </div>
                 </div>
             </section>
@@ -125,7 +88,11 @@
         <span>WebDev Team &#8251; 2021</span>
     </footer>
 
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="api.js"></script>
     <script src="post.js"></script>
 </body>
 </html>
