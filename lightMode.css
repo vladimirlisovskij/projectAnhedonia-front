@@ -81,6 +81,26 @@ article
  background: #F8F8F8;
 }
 
+.name-and-registration h2
+{
+    padding: 30px 0 8px;
+    position: relative;
+}
+
+.name-and-registration h2::before 
+{
+    content: "";
+    position: absolute;
+    left: 7%;
+    bottom: 16px;
+    width: 150px;
+    height: 14px;
+    transform: skew(-12deg) translateX(-50%);
+    background: rgba(238,111,87,0.5);
+    z-index: -1;
+}
+
+/* scrollbar */
 ::-webkit-scrollbar /*размеры ползунков*/
 {
     width: 10px ;
