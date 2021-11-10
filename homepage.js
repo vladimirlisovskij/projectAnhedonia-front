@@ -2,7 +2,6 @@ const App = {
     data() {
         return {
             IsaDay: true,
-
             loginModalOpen: false,
             registerModalOpen: false,
 
@@ -14,6 +13,8 @@ const App = {
             registerLogin: "",
             registerPassword: "",
             registerRePassword: "",
+          
+            firstThree: true,
 
             isLoggedIn: false
         }
@@ -35,7 +36,10 @@ const App = {
             this.isLoggedIn = true;
         }
     },
-    methods: { 
+    methods: {
+        switchThree() {
+            this.firstThree = !this.firstThree; 
+        },
         getModeCssFile() {
             return this.IsaDay ? "lightMode.css" : "nightMode.css";
         },

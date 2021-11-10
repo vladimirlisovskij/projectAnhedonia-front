@@ -37,6 +37,23 @@ header
     background-color: #FFEFA0;
 }
 
+/* recommends */
+#our-selection
+{
+background-color: #F6F6F6;
+}
+
+/* content */
+.content-clause
+{
+background-color: #F6F6F6;
+}
+
+.content-link a
+{
+    color: black;
+}
+
 /* post.html */
 #about-author
 {

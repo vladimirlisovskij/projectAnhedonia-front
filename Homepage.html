@@ -55,24 +55,95 @@
         <section id="our-selection">
             <h2>Выбор редакции</h2>
             <div class="slider">
-                <div class="slide-arrow"><img src="img/arrow-left.png"></div>
+                <div class="slide-arrow" @click="switchThree()"><img src="img/arrow-left.png"></div>
                 
-                <div class="selection-posts">
+                <div class="selection-posts" v-if="firstThree">
                     <img src="img/test.png">
-                    <figcaption>Как научиться думать, как тестировщик</figcaption>
+                    <figcaption><span>Как научиться думать, как тестировщик</span></figcaption>
                 </div>
 
-                <div class="selection-posts">
+                <div class="selection-posts" v-if="firstThree">
                     <img src="img/test3.jpeg">
-                    <figcaption>Да пишите вы сами этот наш контент</figcaption>
+                    <figcaption><span>Да пишите вы сами этот НАШ контент</span></figcaption>
                 </div>
 
-                <div class="selection-posts">
+                <div class="selection-posts" v-if="firstThree">
                     <img src="img/test2.png">
-                    <figcaption>Я не чувствую давления async</figcaption>
+                    <figcaption><span>Я не чувствую давления async</span></figcaption>
+                </div>
+
+                <div class="selection-posts" v-if="firstThree == false">
+                    <img src="img/test4.jpg">
+                    <figcaption><span>Советы о том, как не надо верстать</span></figcaption>
+                </div>
+
+                <div class="selection-posts" v-if="firstThree == false">
+                    <img src="img/test5.png">
+                    <figcaption><span>Когда «сделать плохо»==«сделать лучше»</span></figcaption>
+                </div>
+
+                <div class="selection-posts" v-if="firstThree == false">
+                    <img src="img/test6.png">
+                    <figcaption><span>Как я стал программистом, потом тимлидом</span></figcaption>
                 </div>
                 
-                <div class="slide-arrow"><img src="img/arrow-right.png"></div>
+                <div class="slide-arrow" @click="switchThree()"><img src="img/arrow-right.png"></div>
+            </div>
+        </section>
+
+        <!-- Основной поток блога -->
+        <section class="content-article">
+            <!-- 1 пункт -->
+            <div class="content-clause">
+                <!-- Автор и дата статьи -->
+                <span class="clause-author">&DarkAngel &middot; <date>08.11.2021</date></span>
+                <figcaption>
+                    <!-- Картинка статьи -->
+                    <img src="img/testArticle.png">
+                    <div class="content-description-wrapper">
+                        <!-- Заголовок пункта -->
+                        <div class="content-head">Мы не знаем что это такое если бы мы знали что это такое мы не знаем что это такое</div>
+                        <!-- Описание пункта -->
+                        <div class="content-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ipsum dolor sit amet consectetur adipiscing elit ut. 
+                            Morbi tincidunt ornare massa eget egestas purus viverra accumsan. Volutpat sed cras ornare arcu dui. 
+                            Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Amet mauris commodo quis imperdiet massa. 
+                            Dui vivamus arcu felis bibendum ut. Purus faucibus ornare suspendisse sed nisi lacus sed. 
+                            Quam quisque id diam vel quam. Ac feugiat sed lectus vestibulum. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. 
+                            Purus in massa tempor nec feugiat nisl pretium. Accumsan in nisl nisi scelerisque. 
+                            Sed vulputate mi sit amet mauris commodo quis.....
+                        </div>
+                        <!-- Ссылка в Сибирь -->
+                        <div class="content-link"><a href="file:///C:/Users/dark1/OneDrive/Рабочий%20стол/X-LOTL/projectAnhedonia-front/post.html">Читать дальше в источнике... &rArr;</a></div>
+                    </div>
+                </figcaption>
+            </div>
+            <!-- 2 пункт -->
+            <div class="content-clause">
+                <!-- Автор и дата статьи -->
+                <span class="clause-author">&MrShurukan &middot; <date>06.11.2021</date></span>
+                <figcaption>
+                    <!-- Картинка статьи -->
+                    <img src="img/void.jpg">
+                    <div class="content-description-wrapper">
+                        <!-- Заголовок пункта -->
+                        <div class="content-head">Книга «{Вы пока еще не знаете JS} Область видимости и замыкания. 2-е межд. издание» </div>
+                        <!-- Описание пункта -->
+                        <div class="content-description">
+                            Вы пока еще не знаете JS. 
+                            И Кайл Симпсон признается, что тоже его не знает (по крайней мере полностью)… 
+                            И никто не знает. Но все мы можем начать работать над тем, чтобы узнать его лучше. 
+                            Сколько бы времени вы ни провели за изучением языка, всегда можно найти что-то еще, что стоит изучить и понять на другом уровне. 
+                            Вы уже прочитали «Познакомьтесь, JavaScript»? 
+                            Тогда откройте вторую книгу серии «Вы пока еще не знаете JS», 
+                            чтобы познакомиться поближе с первым из трех столпов JavaScript — системой областей видимости и функциональными замыканиями, 
+                            а также с мощным паттерном проектирования «Модуль». 
+                        </div>
+                        <!-- Ссылка в Сибирь -->
+                        <div class="content-link"><a href="#">Читать дальше в источнике... &rArr;</a></div>
+                    </div>
+                </figcaption>
             </div>
         </section>
     </main>
