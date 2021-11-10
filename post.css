@@ -62,6 +62,8 @@ main
     height: calc(100% - 60px);
 
     text-align:justify;
+    font-family: "Zen Kurenaido";
+    font-size: 20px;
 }
 
 article
@@ -140,6 +142,8 @@ p.middle-text
     text-align: justify;
     text-indent: 5ch;
     font-size: 20px;
+    font-family: "Source Sans Pro";
+    line-height: 25,14px;
 }
 
 /* Комменты */

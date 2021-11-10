@@ -1,8 +1,78 @@
-#content-block
+#content-block,
+.content-article,
+.content-clause,
+.content-description-wrapper
 {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+}
+
+#content-block
+{
     align-items: center;
 }
 
+.content-article
+{
+    position: relative;
+    align-items: center;
+
+    width: 78%;
+    margin-top: 29px;
+   
+}
+
+.content-clause
+{
+    width: 100%;
+    margin-top: 30px;
+
+    box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+}
+
+.clause-author
+{
+    font-family: "Amatic SC B";
+    font-size: 23px;
+    padding-left: 10px;
+    padding-top: 3px;
+}
+
+.content-clause > figcaption
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: 15px;
+}
+
+.content-clause img
+{
+    height: 274px;
+    padding-bottom: 23px;
+}
+
+.content-description-wrapper
+{
+    justify-content: space-around;
+    margin-left: 16px;
+    padding-bottom: 23px;
+}
+
+.content-head
+{
+    font-family: "Amatic SC B";
+    font-size: 27px;
+}
+
+.content-link a
+{
+    text-align: left;
+}
+
+.content-link a:hover
+{
+    color: #ffb4b4;
+}

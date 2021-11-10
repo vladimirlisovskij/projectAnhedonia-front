@@ -10,7 +10,6 @@
     width: 78%;
     margin-top: 29px;
 
-    background-color: #F6F6F6;
     box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.15);
     border-radius: 29px;
 
@@ -50,12 +49,15 @@
     height: 206px;
 }
 
-.selection-posts > figcaption
-{
-    text-align: center;
-}
-
 .slide-arrow > img
 {
     width: 43px;
+}
+
+.selection-posts > figcaption
+{
+    text-align: center;
+    font-family: "Zen Kurenaido";
+    font-size: 18px;
+    overflow-wrap: inherit;
 }

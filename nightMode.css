@@ -38,6 +38,23 @@ header
     background-color: #BEB6CF;
 }
 
+/* recommends */
+#our-selection
+{
+background-color: #857980;
+}
+
+/* content */
+.content-clause
+{
+background-color: #857980;
+}
+
+.content-link a
+{
+    color: whitesmoke;
+}
+
 /* post.html */
 #about-author
 {
